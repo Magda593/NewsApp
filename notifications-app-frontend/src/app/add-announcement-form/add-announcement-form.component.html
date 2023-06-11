@@ -1,0 +1,70 @@
+<form
+  class="announcement-form"
+  (ngSubmit)="AddAnnouncement()"
+  #announcementForm="ngForm"
+>
+<img class="prof" src="../assets/pxfinuel.jpg" alt="img" />
+  <mat-form-field class="full-width">
+    <mat-label>Title</mat-label>
+    <input
+      matInput
+      placeholder="Title"
+      [(ngModel)]="title"
+      name="title"
+      required
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="full-width">
+    <mat-label>Author</mat-label>
+    <input
+      matInput
+      placeholder="Author"
+      [(ngModel)]="author"
+      name="author"
+      required
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="full-width">
+    <mat-label>ImageUrl</mat-label>
+    <input
+      matInput
+      placeholder="imageUrl"
+      [(ngModel)]="imageUrl"
+      name="imageUrl"
+      required
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="full-width">
+    <mat-label>Category:</mat-label>
+    <mat-select [(ngModel)]="selectedCategory" name="selectedCategory">
+      <mat-option *ngFor="let Category of categories" [value]="Category.id">
+        {{ Category.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+  <mat-form-field class="full-width">
+    <mat-label>Leave a message</mat-label>
+    <textarea
+      matInput
+      placeholder="..."
+      [(ngModel)]="message"
+      name="message"
+    ></textarea>
+  </mat-form-field>
+  <br />
+
+  <button
+    type="submit"
+    class="btn btn-success"
+    [disabled]="!announcementForm.form.valid"
+    mat-raised-button
+    color="primary"
+  >
+    Add
+  </button>
+  <button [routerLink]="'../'" mat-raised-button color="primary">Cancel</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="app-container">
+  <img class="prof" src="../assets/pxfinuel.jpg" alt="img" />
+  <div>
+    <app-categories
+      (selectedCategoryEmitter)="FilterAnnouncementsByCategory($event)"
+    >
+    </app-categories>
+  </div>
+
+  <div class="announcements" *ngFor="let announcement of filteredAnnouncements">
+    <app-announcement [announcement]="announcement"> </app-announcement>
+  </div>
+
+  <button mat-raised-button color="primary" [routerLink]="'/add'">
+    Create New Post
+  </button>
+</div>

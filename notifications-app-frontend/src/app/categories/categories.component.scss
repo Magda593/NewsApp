@@ -1,0 +1,14 @@
+.category-button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+  
+    .glow-button {
+      transition: box-shadow 0.2s ease-in-out;  
+  
+      &:hover {
+        box-shadow: 0 0 8px 2px #5d33a0;
+      }
+    }
+  }
+  

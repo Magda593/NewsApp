@@ -1,0 +1,17 @@
+<div class="box glowing announcement-container">
+  <div class="title">
+    <p>{{ announcement.title }}</p>
+  </div>
+  <div class="message">
+    <p>{{ announcement.message }}</p>
+  </div>
+  <div class="author">
+    <p>{{ announcement.author | byAuthor }}</p>
+  </div>
+
+  <div class="button-container">
+    <button mat-icon-button (click)="deleteAnnouncement()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+</div>
